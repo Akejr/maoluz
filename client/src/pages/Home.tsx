@@ -24,7 +24,7 @@ export default function Home() {
   const unitPrice = 149.99;
   const unitOriginalPrice = 299.99;
   const discount = "50%";
-  
+
   // Calcula preço total baseado na quantidade selecionada
   const totalPrice = unitPrice * selectedQuantity;
   const totalOriginalPrice = unitOriginalPrice * selectedQuantity;
@@ -108,7 +108,7 @@ export default function Home() {
       const result = await response.json();
 
       if (result.url) {
-        window.open(result.url, '_blank');
+        window.location.href = result.url;
       } else {
         throw new Error("URL de checkout não retornada");
       }
@@ -154,9 +154,8 @@ export default function Home() {
                 <button
                   key={idx}
                   onClick={() => setSelectedImage(idx)}
-                  className={`aspect-square rounded-lg overflow-hidden border-2 transition-all ${
-                    selectedImage === idx ? "border-orange-500" : "border-gray-200"
-                  }`}
+                  className={`aspect-square rounded-lg overflow-hidden border-2 transition-all ${selectedImage === idx ? "border-orange-500" : "border-gray-200"
+                    }`}
                 >
                   <img src={img} alt={`Produto ${idx + 1}`} className="w-full h-full object-cover" />
                 </button>
