@@ -1,0 +1,272 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Design Dinâmico & Energético - MãoLuz */
+  /* Cores: Laranja Vibrante (#FF6B35) + Azul Profundo (#1E3A8A) */
+  --primary: #FF6B35;
+  --primary-foreground: #FFFFFF;
+  --secondary: #1E3A8A;
+  --secondary-foreground: #FFFFFF;
+  --accent: #FCD34D;
+  --accent-foreground: #1F2937;
+  --destructive: #E63946;
+  --destructive-foreground: #FFFFFF;
+  
+  --sidebar-primary: #FF6B35;
+  --sidebar-primary-foreground: #FFFFFF;
+  --chart-1: #FF6B35;
+  --chart-2: #1E3A8A;
+  --chart-3: #FCD34D;
+  --chart-4: #10B981;
+  --chart-5: #06B6D4;
+  
+  --radius: 0.75rem;
+  --background: #FFFFFF;
+  --foreground: #1F2937;
+  --card: #FFFFFF;
+  --card-foreground: #1F2937;
+  --popover: #FFFFFF;
+  --popover-foreground: #1F2937;
+  --muted: #F3F4F6;
+  --muted-foreground: #6B7280;
+  --border: #E5E7EB;
+  --input: #F3F4F6;
+  --ring: #FF6B35;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #1F2937;
+  --sidebar-accent: #F3F4F6;
+  --sidebar-accent-foreground: #1F2937;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #FF6B35;
+}
+
+.dark {
+  --primary: #FF6B35;
+  --primary-foreground: #FFFFFF;
+  --secondary: #1E3A8A;
+  --secondary-foreground: #FFFFFF;
+  --background: #0F172A;
+  --foreground: #F3F4F6;
+  --card: #1E293B;
+  --card-foreground: #F3F4F6;
+  --popover: #1E293B;
+  --popover-foreground: #F3F4F6;
+  --secondary: #64748B;
+  --secondary-foreground: #F3F4F6;
+  --muted: #334155;
+  --muted-foreground: #CBD5E1;
+  --accent: #FCD34D;
+  --accent-foreground: #1F2937;
+  --destructive: #E63946;
+  --destructive-foreground: #FFFFFF;
+  --border: #334155;
+  --input: #1E293B;
+  --ring: #FF6B35;
+  --sidebar: #1E293B;
+  --sidebar-foreground: #F3F4F6;
+  --sidebar-accent: #334155;
+  --sidebar-accent-foreground: #F3F4F6;
+  --sidebar-border: #334155;
+  --sidebar-ring: #FF6B35;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl font-bold tracking-tight;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl font-bold tracking-tight;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  /**
+   * Design Dinâmico & Energético - MãoLuz
+   * Componentes customizados com animações e interatividade
+   */
+  
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+  
+  /* Botão com efeito energético */
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg transition-all duration-300;
+    @apply hover:shadow-lg hover:shadow-primary/50 hover:scale-105;
+    @apply active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-secondary text-secondary-foreground font-semibold rounded-lg transition-all duration-300;
+    @apply hover:shadow-lg hover:shadow-secondary/50 hover:scale-105;
+    @apply active:scale-95;
+  }
+  
+  /* Card com efeito flutuante */
+  .card-hover {
+    @apply transition-all duration-300;
+    @apply hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2;
+  }
+  
+  /* Seção com fundo degradado */
+  .section-gradient {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F3F4F6 100%);
+  }
+  
+  .section-gradient-dark {
+    background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+  }
+  
+  /* Divisor diagonal */
+  .divider-diagonal {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .divider-diagonal::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: inherit;
+    clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
+  }
+  
+  /* Animação de entrada */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  /* Animação de glow */
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 5px rgba(255, 107, 53, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 107, 53, 0.8);
+    }
+  }
+  
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+  
+  /* Texto com gradiente */
+  .text-gradient {
+    background: linear-gradient(135deg, #FF6B35 0%, #1E3A8A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
